@@ -66,6 +66,16 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="cni_email">CNI Email: </label>
+          <input
+            type="text"
+            className="form-control"
+            id="position"
+            value={form.cni_email}
+            onChange={(e) => updateForm({ cni_email: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
           <label htmlFor="certifications">Documentations: </label>
           <input
             type="text"
