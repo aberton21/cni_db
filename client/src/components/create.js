@@ -7,6 +7,7 @@ export default function Create() {
     position: "",
     level: "",
     certifications: "",
+    cni_email: "",
   });
   const navigate = useNavigate();
 

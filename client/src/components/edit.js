@@ -7,6 +7,7 @@ export default function Edit() {
     position: "",
     level: "",
     certifications: "",
+    cni_email: "",
     records: [],
   });
   const params = useParams();
