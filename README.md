@@ -29,3 +29,6 @@ Consists of the cluster used to connect to MongoDB.
 
 ATLAS_URI=mongodb+srv://mern:mongodb@cluster0.izoaz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 PORT=5000
+
+## Front-End Development
+We used React Native to create the front-end side of the application. The key components we implemented on the front-end were the record list which displays the base information on employees and students, the create feature which allows users to create a new entry which is then added to the record list, the edit list which allows users to edit/update existing records, and the Navbar component which will utilize the router capabilities in React which allows users to be re-directed to the edit page.
