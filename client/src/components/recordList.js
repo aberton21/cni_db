@@ -7,7 +7,6 @@ const Record = (props) => (
     <td>{props.record.position}</td>
     <td>{props.record.level}</td>
     <td>{props.record.certifications}</td>
-    <td>{props.record.cni_email}</td>
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
       <button className="btn btn-link"

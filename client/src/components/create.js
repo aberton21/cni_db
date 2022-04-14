@@ -37,7 +37,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", position: "", level: "", certifications: "" });
+    setForm({ name: "", position: "", level: "", certifications: "", cni_email: "", });
     navigate("/");
   }
 
