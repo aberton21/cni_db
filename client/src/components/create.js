@@ -67,7 +67,7 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="cni_email">CNI Email: </label>
+          <label htmlFor="cni_email">Email: </label>
           <input
             type="text"
             className="form-control"
