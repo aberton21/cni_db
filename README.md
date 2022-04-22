@@ -32,3 +32,18 @@ PORT=5000
 
 ## Front-End Development
 We used React Native to create the front-end side of the application. The key components we implemented on the front-end were the record list which displays the base information on employees and students, the create feature which allows users to create a new entry which is then added to the record list, the edit list which allows users to edit/update existing records, and the Navbar component which will utilize the router capabilities in React which allows users to be re-directed to the edit page.
+
+### recordList.js 
+Displays the faculty/student name and information in a list with a column that allows users to edit or delete a record from the database. Record information is fetched from the database on the server side and displayed on the front-end side.
+
+### create.js
+Once the user is redirected to the create page, the program rompts the user to create a new entry. Displays the form that will take the input from the user. Once the user hits "Create person" the information entered is stored in the database and displayed in the record list. The user will then be redirected to the homepage.
+
+### edit.js
+Functions similarly to "create.js". Information stored in the create feature is saved in the input form. Once the user has made their changes and hit "Update Record", they will be redirected to the homepage and the updated information will be saved on the database to be transferred to the record list.
+
+### navbar.js
+Utilizes the Navlink component to use the react router. This router is used to create the "Add Employee/Student" link that redirects users to the create page.
+
+## Features to be Implemented
+- Search Engine/Filter
