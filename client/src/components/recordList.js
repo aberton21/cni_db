@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SearchFeature from "./searchFeature";
 
 const Record = (props) => (
   <tr>
@@ -70,6 +71,11 @@ export default function RecordList() {
   return (
     <div>
       <h3>Internal Faculty/Staff</h3>
+      <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem auto' }}>
+        <SearchFeature />
+
+      </div>
+
       <table className="table table-striped" style={{ marginTop: 20 }}>
         <thead>
           <tr>
