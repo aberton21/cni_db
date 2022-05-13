@@ -8,7 +8,7 @@ export default function Edit() {
     level: "",
     certifications: "",
     cni_email: "",
-    gender: "",
+    //gender: "",
     records: [],
   });
   const params = useParams();
@@ -55,7 +55,7 @@ export default function Edit() {
       level: form.level,
       certifications: form.certifications,
       cni_email: form.cni_email,
-      gender: form.gender,
+      //gender: form.gender,
     };
 
     // This will send a post request to update the data in the database.
@@ -151,32 +151,6 @@ export default function Edit() {
               onChange={(e) => updateForm({ level: e.target.value })}
             />
             <label htmlFor="positionStudent" className="form-check-label">Student</label>
-          </div>
-        </div>
-        <div className="form-group">
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="genderOptions"
-              id="genderMale"
-              value="Male"
-              checked={form.gender === "Male"}
-              onChange={(e) => updateForm({ gender: e.target.value })}
-            />
-            <label htmlFor="genderMale" className="form-check-label">Male</label>
-          </div>
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="genderOptions"
-              id="genderFemale"
-              value="Female"
-              checked={form.gender === "Female"}
-              onChange={(e) => updateForm({ gender: e.target.value })}
-            />
-            <label htmlFor="genderFemale" className="form-check-label">Female</label>
           </div>
         </div>
         <br />

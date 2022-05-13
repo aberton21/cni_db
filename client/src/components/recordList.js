@@ -23,6 +23,11 @@ const Record = (props) => (
 
 export default function RecordList() {
   const [records, setRecords] = useState([]);
+   const [SearchTerms, setSearchTerms] = useState("")
+
+  const updateSearchTerms = (newSearchTerm) => {
+    setSearchTerms(newSearchTerm)
+  } 
 
   // This method fetches the records from the database.
   useEffect(() => {
@@ -70,12 +75,13 @@ export default function RecordList() {
   // This following section will display the table with the records of individuals.
   return (
     <div>
-      <h3>Internal Faculty/Staff</h3>
+      <h3>Faculty & Student Records</h3>
       <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem auto' }}>
-        <SearchFeature />
+        <SearchFeature 
+          refreshFunction={updateSearchTerms}
+        />
 
       </div>
-
       <table className="table table-striped" style={{ marginTop: 20 }}>
         <thead>
           <tr>

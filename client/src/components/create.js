@@ -37,7 +37,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", position: "", level: "", certifications: "", cni_email: "", });
+    setForm({ name: "", position: "", level: "", certifications: "", cni_email: "",});
     navigate("/");
   }
 
@@ -122,32 +122,6 @@ export default function Create() {
               onChange={(e) => updateForm({ level: e.target.value })}
             />
             <label htmlFor="positionStudent" className="form-check-label">Student</label>
-          </div>
-        </div>
-        <div className="form-group">
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="genderOptions"
-              id="genderMale"
-              value="Male"
-              checked={form.gender === "Male"}
-              onChange={(e) => updateForm({ gender: e.target.value })}
-            />
-            <label htmlFor="genderMale" className="form-check-label">Male</label>
-          </div>
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="genderOptions"
-              id="genderFemale"
-              value="Female"
-              checked={form.gender === "Female"}
-              onChange={(e) => updateForm({ gender: e.target.value })}
-            />
-            <label htmlFor="genderFemale" className="form-check-label">Female</label>
           </div>
         </div>
         <div className="form-group">
