@@ -8,7 +8,7 @@ const Signup = () => {
         firstName: "",
         lastName: "",
         email: "",
-        password: "", //test change
+        password: "", 
     });
     const [error, setError] = useState("")
     const navigate = useNavigate();
