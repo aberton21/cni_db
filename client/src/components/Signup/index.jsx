@@ -13,14 +13,14 @@ const Signup = () => {
     const [error, setError] = useState("")
     const navigate = useNavigate();
 
-    const hangleChange = ({currentTarget: input }) => {
+    const handleChange = ({currentTarget: input }) => {
         setData({...data, [input.name]: input.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = "http://localhost:5000/api/users";
+            const url = "http://localhost:8080/api/users";
             const { data: res } = await axios.post(url, data);
             navigate("/login")
             console.log(res.message);
@@ -39,10 +39,11 @@ const Signup = () => {
             <div className={styles.signup_form_container}>
                 <div className={styles.left}>
                     <h1>Welcome Back</h1>
-                    <Link to="/login"></Link>
-                    <button type='button' className={styles.white_btn}>
-                        Sign in
-                    </button>
+                    <Link to="/login">
+                        <button type='button' className={styles.white_btn}>
+                            Sign in
+                        </button>
+                    </Link>
                 </div>
                 <div className={styles.right}>
                     <form className={styles.form_container} onSubmit={handleSubmit}>
@@ -83,15 +84,17 @@ const Signup = () => {
                             required
                             className={styles.input}
                         />
+                        {error && <div className={styles.error_msg}>{error}</div>}
+                        <Link to="/login">
                         <button type="submit" className={styles.green_btn}>
                             Sign Up
                         </button>
-                        {error && <div className={styles.error_msg}>{error}</div>}
+                        </Link>
                     </form>
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default Signup;
