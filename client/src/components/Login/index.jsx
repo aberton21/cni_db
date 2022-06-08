@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import styles from './styles.module.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import styles from "./styles.module.css";
 
 const Login = () => {
     const [data, setData] = useState({
         email: "",
         password: "", 
     });
-    const [error, setError] = useState("")
+    const [error, setError] = useState("");
 
     const handleChange = ({currentTarget: input }) => {
         setData({...data, [input.name]: input.value });
@@ -27,10 +27,10 @@ const Login = () => {
                 error.response.status >= 400 &&
                 error.response.status <= 500
             ) {
-                setError(error.response.data.message)
+                setError(error.response.data.message);
             }
         }
-    }
+    };
 
     return (
         <div className={styles.login_container}>
@@ -57,7 +57,7 @@ const Login = () => {
                             className={styles.input}
                         />
                         {error && <div className={styles.error_msg}>{error}</div>}
-                        <button type="submit" className={styles.green_btn}>
+                        <button type="button" className={styles.green_btn}>
                             Sign In
                         </button>
                     </form> 

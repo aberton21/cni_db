@@ -10,7 +10,7 @@ const Main = () => {
         <div className={styles.main_container}>
             <nav className={styles.navbar}>
                 <h1>CNI Database</h1>
-                <button className={styles.white_btn} onClick={handleLogout} >
+                <button className={styles.white_btn} onClick={handleLogout}>
                     Logout
                 </button>
             </nav>
