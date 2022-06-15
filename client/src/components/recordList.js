@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchFeature from "./searchFeature";
 
+import "bootstrap/dist/css/bootstrap.css";
+
+import { NavLink } from "react-router-dom";
+
 const Record = (props) => (
   <tr>
     <td>{props.record.name}</td>
@@ -32,7 +36,7 @@ export default function RecordList() {
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:8080/record/`);
+      const response = await fetch(`http://localhost:5000/record/`);
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -75,6 +79,18 @@ export default function RecordList() {
   // This following section will display the table with the records of individuals.
   return (
     <div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/create">
+                Add Employee/Student
+              </NavLink>
+            </li>
+          </ul>
+      </div>
+      </nav>
+      
       <h3>Faculty & Student Records</h3>
       <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem auto' }}>
         <SearchFeature 
