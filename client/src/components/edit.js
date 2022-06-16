@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Edit() {
   const [form, setForm] = useState({
@@ -73,7 +74,7 @@ export default function Edit() {
   // This following section will display the form that takes input from the user to update the data.
   return (
     <div>
-      <h3>Update Record</h3>
+      <h3>Update User</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name: </label>
@@ -161,6 +162,13 @@ export default function Edit() {
             value="Update Record"
             className="btn btn-primary"
           />
+        </div>
+        <div className="form-group">
+          <Link to="/">
+            <button type="button" className="btn btn-primary">
+              Cancel
+            </button>
+          </Link>
         </div>
       </form>
     </div>

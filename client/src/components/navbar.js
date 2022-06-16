@@ -11,9 +11,8 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <img style={{"width" : 20 + '%'}} src="https://d3cy9zhslanhfa.cloudfront.net/media/3800C044-6298-4575-A05D5C6B7623EE37/4B45D0EC-3482-4759-82DA37D8EA07D229/webimage-8A27671A-8A53-45DC-89D7BF8537F15A0D.png"></img>
-
-      </nav>
+        <img style={{"width" : 20 + '%'}} src="https://cnicollege.sharepoint.com/:i:/r/sites/ITDepartment/Shared%20Documents/General/Digital%20Assets/CNI%20Main%20Logo.png?csf=1&web=1&e=NTDljU"></img>
+      </nav> 
     </div>
   );
 }

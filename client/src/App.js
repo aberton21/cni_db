@@ -1,9 +1,9 @@
 import React from "react";
 
 // We use Route in order to define the different routes of our application
-import { Route, Routes /* Navigate */ } from "react-router-dom";
-//import Main from "./components/Main";
-//import Login from "./components/Login";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Main from "./components/Main";
+import Login from "./components/Login";
 
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
@@ -21,7 +21,7 @@ import Create from "./components/create";
     <Route path="/" element={<Navigate replace to="/login" />} /> */
 
 const App = () => {
-  // const user = localStorage.getItem("token");
+  const user = localStorage.getItem("token");
   return (
     <div>
       <Navbar />

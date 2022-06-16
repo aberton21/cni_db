@@ -84,14 +84,14 @@ export default function RecordList() {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <NavLink className="nav-link" to="/create">
-                Add Employee/Student
+                Add User
               </NavLink>
             </li>
           </ul>
       </div>
       </nav>
       
-      <h3>Faculty & Student Records</h3>
+      <h3>Faculty Records</h3>
       <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem auto' }}>
         <SearchFeature 
           refreshFunction={updateSearchTerms}
