@@ -102,8 +102,8 @@ export default function RecordList() {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Department/Program</th>
-            <th>Level</th>
+            <th>Department</th>
+            <th>Position</th>
             <th>Documentations</th>
             <th>Action</th>
           </tr>

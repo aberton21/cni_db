@@ -77,44 +77,138 @@ export default function Edit() {
       <h3>Update User</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name: </label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             className="form-control"
             id="name"
             value={form.name}
+            required
             onChange={(e) => updateForm({ name: e.target.value })}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="position">Department/Program: </label>
-          <input
-            type="text"
-            className="form-control"
-            id="position"
-            value={form.position}
-            onChange={(e) => updateForm({ position: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="cni_email">Email: </label>
+          <label htmlFor="cni_email">Email</label>
           <input
             type="text"
             className="form-control"
             id="position"
             value={form.cni_email}
+            required
             onChange={(e) => updateForm({ cni_email: e.target.value })}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="certifications">Documentations: </label>
-          <input
-            type="text"
-            className="form-control"
-            id="certifications"
-            value={form.certifications}
-            onChange={(e) => updateForm({ certifications: e.target.value })}
-          />
+          <label htmlFor="position">Department</label>
+        </div>
+        <div className="form-group">
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentExecutives"
+              value="Executives"
+              checked={form.position === "Executives"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentExecutives" className="form-check-label">Executives</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentFA"
+              value="Financial Aid"
+              checked={form.position === "Financial Aid"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentFA" className="form-check-label">Financial Aid</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentAdmissions"
+              value="Admissions"
+              checked={form.position === "Admissions"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentAdmissions" className="form-check-label">Admissions</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentCS"
+              value="Career Services"
+              checked={form.position === "Career Services"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentCS" className="form-check-label">Career Services</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentRegistrar"
+              value="Registrar"
+              checked={form.position === "Registrar"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentRegistrar" className="form-check-label">Registrar</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentIT"
+              value="Information Technology"
+              checked={form.position === "Information Technology"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentIT" className="form-check-label">Information Technology</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentNursing"
+              value="Nursing"
+              checked={form.position === "Nursing"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentNursing" className="form-check-label">Nursing</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="departmentOptions"
+              id="departmentEducation"
+              value="Education"
+              checked={form.position === "Education"}
+              required
+              onChange={(e) => updateForm({ position: e.target.value })}
+            />
+            <label htmlFor="departmentEducation" className="form-check-label">Education</label>
+          </div>
+        </div>
+        <div className="form-group">
+          <label htmlFor="position">Position</label>
         </div>
         <div className="form-group">
           <div className="form-check form-check-inline">
@@ -125,6 +219,7 @@ export default function Edit() {
               id="positionFaculty"
               value="Faculty"
               checked={form.level === "Faculty"}
+              required
               onChange={(e) => updateForm({ level: e.target.value })}
             />
             <label htmlFor="positionFaculty" className="form-check-label">Faculty</label>
@@ -137,22 +232,21 @@ export default function Edit() {
               id="positionStaff"
               value="Staff"
               checked={form.level === "Staff"}
+              required
               onChange={(e) => updateForm({ level: e.target.value })}
             />
             <label htmlFor="positionStaff" className="form-check-label">Staff</label>
           </div>
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="positionOptions"
-              id="positionStudent"
-              value="Student"
-              checked={form.level === "Student"}
-              onChange={(e) => updateForm({ level: e.target.value })}
-            />
-            <label htmlFor="positionStudent" className="form-check-label">Student</label>
-          </div>
+        </div>
+        <div className="form-group">
+          <label htmlFor="certifications">Documentations</label>
+          <input
+            type="text"
+            className="form-control"
+            id="certifications"
+            value={form.certifications}
+            onChange={(e) => updateForm({ certifications: e.target.value })}
+          />
         </div>
         <br />
 
