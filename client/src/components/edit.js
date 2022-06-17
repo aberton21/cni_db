@@ -7,9 +7,8 @@ export default function Edit() {
     name: "",
     position: "",
     level: "",
-    certifications: "",
     cni_email: "",
-    //gender: "",
+    address: "",
     records: [],
   });
   const params = useParams();
@@ -54,9 +53,8 @@ export default function Edit() {
       name: form.name,
       position: form.position,
       level: form.level,
-      certifications: form.certifications,
       cni_email: form.cni_email,
-      //gender: form.gender,
+      address: form.address,
     };
 
     // This will send a post request to update the data in the database.
@@ -77,7 +75,7 @@ export default function Edit() {
       <h3>Update User</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             className="form-control"
@@ -88,7 +86,7 @@ export default function Edit() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="cni_email">Email</label>
+          <label htmlFor="cni_email">Email:</label>
           <input
             type="text"
             className="form-control"
@@ -99,8 +97,7 @@ export default function Edit() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="position">Department</label>
-        </div>
+          <label htmlFor="position">Department:</label>
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -207,9 +204,9 @@ export default function Edit() {
             <label htmlFor="departmentEducation" className="form-check-label">Education</label>
           </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="position">Position</label>
         </div>
+        <div className="form-group">
+          <label htmlFor="position">Position:</label>
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -238,14 +235,17 @@ export default function Edit() {
             <label htmlFor="positionStaff" className="form-check-label">Staff</label>
           </div>
         </div>
+        </div>
+
+        <h3>Personal Information</h3>
         <div className="form-group">
-          <label htmlFor="certifications">Documentations</label>
+          <label htmlFor="address">Address:</label>
           <input
             type="text"
             className="form-control"
-            id="certifications"
-            value={form.certifications}
-            onChange={(e) => updateForm({ certifications: e.target.value })}
+            id="address"
+            value={form.address}
+            onChange={(e) => updateForm({ address: e.target.value })}
           />
         </div>
         <br />

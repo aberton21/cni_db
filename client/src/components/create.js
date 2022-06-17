@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 export default function Create() {
   const [form, setForm] = useState({
     name: "",
-    department: "",
     position: "",
     level: "",
-    certifications: "",
     cni_email: "",
+    address: "",
   });
   const navigate = useNavigate();
 
@@ -39,7 +38,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", department: "", level: "", certifications: "", cni_email: "",});
+    setForm({ name: "", position: "", level: "", cni_email: "", address: "",});
     navigate("/");
   }
 
@@ -49,7 +48,7 @@ export default function Create() {
       <h3>Create New User</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             className="form-control"
@@ -60,8 +59,18 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="position">Department: </label>
+          <label htmlFor="cni_email">Email: </label>
+          <input
+            type="email"
+            className="form-control"
+            id="cni_email"
+            value={form.cni_email}
+            required
+            onChange={(e) => updateForm({ cni_email: e.target.value })}
+          />
         </div>
+        <div className="form-group">
+          <label htmlFor="position">Department: </label>
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -168,30 +177,10 @@ export default function Create() {
             <label htmlFor="departmentEducation" className="form-check-label">Education</label>
           </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="cni_email">Email: </label>
-          <input
-            type="email"
-            className="form-control"
-            id="cni_email"
-            value={form.cni_email}
-            required
-            onChange={(e) => updateForm({ cni_email: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="certifications">Documentations: </label>
-          <input
-            type="text"
-            className="form-control"
-            id="certifications"
-            value={form.certifications}
-            onChange={(e) => updateForm({ certifications: e.target.value })}
-          />
         </div>
         <div className="form-group">
           <label htmlFor="position">Position: </label>
-        </div>
+        
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -219,6 +208,18 @@ export default function Create() {
             />
             <label htmlFor="positionStaff" className="form-check-label">Staff</label>
           </div>
+        </div>
+        </div>
+        <h3>Personal Information</h3>
+        <div className="form-group">
+          <label htmlFor="address">Address:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="address"
+            value={form.address}
+            onChange={(e) => updateForm({ address: e.target.value })}
+          />
         </div>
         <div className="form-group">
           <input
