@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const Record = (props) => (
   <tr>
-    <td>{props.record.name}</td>
+    <td>{props.record.surname}, {props.record.name}</td>
     <td>{props.record.position}</td>
     <td>{props.record.level}</td>
     <td>{props.record.certifications}</td>

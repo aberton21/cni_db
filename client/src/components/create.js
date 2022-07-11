@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Create() {
   const [form, setForm] = useState({
     name: "",
+    surname: "",
     position: "",
     level: "",
     cni_email: "",
@@ -38,7 +39,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", position: "", level: "", cni_email: "", address: "",});
+    setForm({ name: "", surname: "", position: "", level: "", cni_email: "", address: "",});
     navigate("/");
   }
 
@@ -48,7 +49,7 @@ export default function Create() {
       <h3>Create New User</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">First Name:</label>
           <input
             type="text"
             className="form-control"
@@ -56,6 +57,17 @@ export default function Create() {
             value={form.name}
             required
             onChange={(e) => updateForm({ name: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="surname">Last Name:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="surname"
+            value={form.surname}
+            required
+            onChange={(e) => updateForm({ surname: e.target.value })}
           />
         </div>
         <div className="form-group">
