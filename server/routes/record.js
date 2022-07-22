@@ -42,7 +42,9 @@ recordRoutes.route("/record/add").post(function (req, response) {
   let myobj = {
     name: req.body.name,
     surname: req.body.surname,
+    number: req.body.number,
     position: req.body.position,
+    vet_status: req.body.vet_status,
     level: req.body.level,
     cni_email: req.body.cni_email,
     address: req.body.address,
@@ -61,7 +63,9 @@ recordRoutes.route("/update/:id").post(function (req, response) {
     $set: {
       name: req.body.name,
       surname: req.body.surname,
+      number: req.body.number,
       position: req.body.position,
+      vet_status: req.body.vet_status,
       level: req.body.level,
       cni_email: req.body.cni_email,
       address: req.body.address,

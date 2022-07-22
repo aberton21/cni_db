@@ -6,7 +6,9 @@ export default function Edit() {
   const [form, setForm] = useState({
     name: "",
     surname: "",
+    number: "",
     position: "",
+    vet_status: "",
     level: "",
     cni_email: "",
     address: "",
@@ -53,7 +55,9 @@ export default function Edit() {
     const editedPerson = {
       name: form.name,
       surname: form.surname,
+      number: form.number,
       position: form.position,
+      vet_status: form.vet_status,
       level: form.level,
       cni_email: form.cni_email,
       address: form.address,
@@ -260,6 +264,46 @@ export default function Edit() {
             value={form.address}
             onChange={(e) => updateForm({ address: e.target.value })}
           />
+        </div>
+        <div className="form-group">
+          <label htmlFor="number">Phone Number:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="number"
+            value={form.number}
+            onChange={(e) => updateForm({ number: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="position">Veteran?: </label>
+        
+        <div className="form-group">
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="vet_statusOptions"
+              id="vet_statusYes"
+              value="Yes"
+              checked={form.vet_status === "Yes"}
+              onChange={(e) => updateForm({ vet_status: e.target.value })}
+            />
+            <label htmlFor="vet_statusYes" className="form-check-label">Yes</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="vet_statusOptions"
+              id="vet_statusNo"
+              value="No"
+              checked={form.vet_status === "No"}
+              onChange={(e) => updateForm({ vet_status: e.target.value })}
+            />
+            <label htmlFor="vet_statusNo" className="form-check-label">No</label>
+          </div>
+        </div>
         </div>
         <br />
 

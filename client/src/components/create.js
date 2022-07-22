@@ -6,7 +6,9 @@ export default function Create() {
   const [form, setForm] = useState({
     name: "",
     surname: "",
+    number: "",
     position: "",
+    vet_status: "",
     level: "",
     cni_email: "",
     address: "",
@@ -39,7 +41,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", surname: "", position: "", level: "", cni_email: "", address: "",});
+    setForm({ name: "", surname: "", number: "", position: "", vet_status: "", level: "", cni_email: "", address: "",});
     navigate("/");
   }
 
@@ -192,7 +194,6 @@ export default function Create() {
         </div>
         <div className="form-group">
           <label htmlFor="position">Position: </label>
-        
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -232,6 +233,46 @@ export default function Create() {
             value={form.address}
             onChange={(e) => updateForm({ address: e.target.value })}
           />
+        </div>
+        <div className="form-group">
+          <label htmlFor="number">Phone Number:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="number"
+            value={form.number}
+            onChange={(e) => updateForm({ number: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="position">Veteran?: </label>
+        
+        <div className="form-group">
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="vet_statusOptions"
+              id="vet_statusYes"
+              value="Yes"
+              checked={form.vet_status === "Yes"}
+              onChange={(e) => updateForm({ vet_status: e.target.value })}
+            />
+            <label htmlFor="vet_statusYes" className="form-check-label">Yes</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="vet_statusOptions"
+              id="vet_statusNo"
+              value="No"
+              checked={form.vet_status === "No"}
+              onChange={(e) => updateForm({ vet_status: e.target.value })}
+            />
+            <label htmlFor="vet_statusNo" className="form-check-label">No</label>
+          </div>
+        </div>
         </div>
         <div className="form-group">
           <input
