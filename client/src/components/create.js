@@ -9,6 +9,7 @@ export default function Create() {
     number: "",
     position: "",
     vet_status: "",
+    dob: "",
     level: "",
     cni_email: "",
     address: "",
@@ -41,7 +42,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", surname: "", number: "", position: "", vet_status: "", level: "", cni_email: "", address: "",});
+    setForm({ name: "", surname: "", number: "", position: "", vet_status: "", dob: "", level: "", cni_email: "", address: "",});
     navigate("/");
   }
 
@@ -245,7 +246,7 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="position">Veteran?: </label>
+          <label htmlFor="vet_status">Veteran?: </label>
         
         <div className="form-group">
           <div className="form-check form-check-inline">
@@ -273,6 +274,16 @@ export default function Create() {
             <label htmlFor="vet_statusNo" className="form-check-label">No</label>
           </div>
         </div>
+        </div>
+        <div className="form-group">
+          <label htmlFor="dob">Date of Birth:</label>
+          <input
+            type="date"
+            className="form-control"
+            id="dob"
+            value={form.dob}
+            onChange={(e) => updateForm({ dob: e.target.value })}
+          />
         </div>
         <div className="form-group">
           <input

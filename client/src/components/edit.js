@@ -9,6 +9,7 @@ export default function Edit() {
     number: "",
     position: "",
     vet_status: "",
+    dob: "",
     level: "",
     cni_email: "",
     address: "",
@@ -58,6 +59,7 @@ export default function Edit() {
       number: form.number,
       position: form.position,
       vet_status: form.vet_status,
+      dob: form.dob,
       level: form.level,
       cni_email: form.cni_email,
       address: form.address,
@@ -304,6 +306,16 @@ export default function Edit() {
             <label htmlFor="vet_statusNo" className="form-check-label">No</label>
           </div>
         </div>
+        </div>
+        <div className="form-group">
+          <label htmlFor="dob">Date of Birth:</label>
+          <input
+            type="date"
+            className="form-control"
+            id="dob"
+            value={form.dob}
+            onChange={(e) => updateForm({ dob: e.target.value })}
+          />
         </div>
         <br />
 
