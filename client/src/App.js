@@ -16,7 +16,6 @@ import Create from "./components/create";
 <Route path="/create" element={<Create />} /> */
 
 /* {user && <Route path="/" exact element={<RecordList />} />}
-    <Route path="/signup" exact element={<Signup />} />
     <Route path="/login" exact element={<Login/> } />
     <Route path="/" element={<Navigate replace to="/login" />} /> */
 
@@ -27,7 +26,7 @@ const App = () => {
       <Navbar />
       <div style={{ margin: 20}}>
       <Routes>
-        <Route exact path="/" element={<RecordList />} />
+        <Route exact path="/" element={<RecordList />} /> 
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
       </Routes>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+// import axios from "axios";
 
 export default function Create() {
   const [form, setForm] = useState({
@@ -12,8 +13,11 @@ export default function Create() {
     dob: "",
     level: "",
     cni_email: "",
+    password: "",
     address: "",
   });
+
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   // These methods will update the state properties.
@@ -26,11 +30,25 @@ export default function Create() {
   // This function will handle the submission.
   async function onSubmit(e) {
     e.preventDefault();
+    /* try {
+        const url = "http://localhost:8080/api/users";
+        const { form: res } = await axios.post(url, form);
+        navigate("/login");
+        console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.form.message);
+      }
+    } */
 
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newPerson = { ...form };
 
-    await fetch("http://localhost:5000/record/add", {
+    await fetch("http://localhost:8080/record/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,14 +60,14 @@ export default function Create() {
       return;
     });
 
-    setForm({ name: "", surname: "", number: "", position: "", vet_status: "", dob: "", level: "", cni_email: "", address: "",});
+    setForm({ name: "", surname: "", number: "", position: "", vet_status: "", dob: "", level: "", cni_email: "", password: "", address: "",});
     navigate("/");
   }
 
   // This following section will display the form that takes the input from the user.
   return (
     <div>
-      <h3>Create New User</h3>
+      <h3>Create New Employee</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="name">First Name:</label>
@@ -74,7 +92,7 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="cni_email">Email: </label>
+          <label htmlFor="cni_email">Email:</label>
           <input
             type="email"
             className="form-control"
@@ -85,7 +103,18 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="position">Department: </label>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            className="form-control"
+            id="password"
+            value={form.password}
+            required
+            onChange={(e) => updateForm({ password: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="position">Department:</label>
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -246,7 +275,7 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="vet_status">Veteran?: </label>
+          <label htmlFor="vet_status">Veteran?:</label>
         
         <div className="form-group">
           <div className="form-check form-check-inline">
